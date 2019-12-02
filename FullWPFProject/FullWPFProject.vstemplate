@@ -8,9 +8,8 @@
     <Name>Full WPF Project</Name>
     <Description>My WPF project with all stuffs a usually use when coding WPF project.</Description>
     <ProjectType>CSharp</ProjectType>
-    <SortOrder>10</SortOrder>
+    <SortOrder>1000</SortOrder>
     <CreateNewFolder>true</CreateNewFolder>
-    <RequiredFrameworkVersion>4.8</RequiredFrameworkVersion>
     <DefaultName>MyFullWPFProject</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>

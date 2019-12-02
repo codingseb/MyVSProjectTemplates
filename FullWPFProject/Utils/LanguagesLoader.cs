@@ -1,4 +1,4 @@
-﻿using Localization.Loaders;
+﻿using CodingSeb.Localization.Loaders;
 using System;
 using System.IO;
 using System.Windows;
