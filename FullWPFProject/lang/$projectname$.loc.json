@@ -1,0 +1,20 @@
+{
+  "LanguageName": {
+    "en": "English",
+    "fr": "Français"
+  },
+  "$safeprojectname$": {
+    "ApplicationLanguageLabel": {
+      "Content": {
+        "en": "_Language",
+        "fr": "_Langue"
+      }
+    },
+    "HelloWorldLabel": {
+      "Content": {
+        "en": "Hello World !!!",
+        "fr": "Bonjour les gens !!!"
+      }
+    }
+  }
+}

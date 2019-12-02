@@ -1,0 +1,24 @@
+<Window x:Class="$safeprojectname$.$safeitemname$"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:$safeprojectname$"
+        xmlns:loc="clr-namespace:Localization;assembly=Localization"
+        mc:Ignorable="d"
+        Title="$safeitemrootname$" 
+        Height="450" Width="800">
+    <DockPanel>
+        <!-- TODO : Example to delete -->
+        <AutoGrid Columns="Auto, *" ChildMargin="5">
+            <Label Content="{Tr '$safeprojectname$.ApplicationLanguageLabel.Content', DefaultText='_Language' }" 
+                   Target="{Binding ElementName=ApplicationLanguageComboBox}" />
+            <ComboBox x:Name="ApplicationLanguageComboBox"
+                      ItemsSource="{Binding AvailableLanguages, Source={x:Static loc:Loc.Instance}}" 
+                      SelectedItem="{Binding CurrentLanguage, Source={x:Static loc:Loc.Instance}}" />
+            <Button Content="{Tr '$safeprojectname$.HelloWorldLabel.Content', DefaultText='Hello World !!!'}"
+                    Grid.ColumnSpan="2"/>
+        </AutoGrid>
+        <!-- end of the example -->
+    </DockPanel>
+</Window>
