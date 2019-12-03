@@ -1,4 +1,4 @@
-using Localization;
+using CodingSeb.Localization;
 using Newtonsoft.Json;
 using System;
 using System.IO;

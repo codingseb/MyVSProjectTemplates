@@ -2,6 +2,7 @@
   
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
+	<EnableDefaultCompileItems>False</EnableDefaultCompileItems>
     <TargetFrameworks>netcoreapp3.0;net48</TargetFrameworks>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
@@ -24,10 +25,6 @@
     
     <Compile Update="Settings.Designer.cs" AutoGen="True" DependentUpon="Settings.settings" />
     <None Update="Settings.settings" LastGenOutput="Settings.Designer.cs" Generator="SettingsSingleFileGenerator" />
-
-    <Page Include="**\*.xaml" SubType="Designer" Generator="MSBuild:Compile"/>
-    <Compile Update="**\*.xaml.cs" SubType="Designer" DependentUpon="%(Filename)" />
-
   </ItemGroup>
   
   <ItemGroup>
