@@ -11,8 +11,8 @@ namespace $safeprojectname$
     /// </summary>
     public sealed class Config : NotifyPropertyChangedBaseClass
     {
-		private bool firstInitOK;
-		
+        private bool firstInitOK;
+        
         private static readonly string fileName = Path.Combine(PathUtils.AppDataPath, "Configuration.json");
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace $safeprojectname$
 
         /// <summary>
         /// The single instance of Config
-		/// Get the backup of the cofig if it exists
+        /// Get the backup of the cofig if it exists
         /// </summary>
         public static Config Instance
         {
@@ -65,7 +65,7 @@ namespace $safeprojectname$
             }
         }
 
-		/// <summary>
+        /// <summary>
         /// To save a backup of this config to restore it at the next instance of the application
         /// </summary>
         public void Save()
