@@ -4,12 +4,16 @@ using System.Text;
 
 namespace $safeprojectname$
 {
-    public class BNpp
+    public static class BNpp
     {
         public static NotepadPPGateway NotepadPP { get; private set; } = new NotepadPPGateway();
 
         public static ScintillaGateway Scintilla => new ScintillaGateway(PluginBase.GetCurrentScintilla());
-		
+
+        /// <summary>
+        /// Récupère les caractères de fin de lignes courant
+        /// !!! Attention pour le moment bug. !!! Enlève la coloration syntaxique du fichier courant
+        /// </summary>
         /// <summary>
         /// Récupère les caractères de fin de lignes courant
         /// !!! Attention pour le moment bug. !!! Enlève la coloration syntaxique du fichier courant
@@ -18,22 +22,15 @@ namespace $safeprojectname$
         {
             get
             {
-                string eol = "\n";
-                int value = Scintilla.GetEOLMode();
-
-                switch ((SciMsg)value)
+                switch (Scintilla.GetEOLMode())
                 {
-                    case SciMsg.SC_EOL_CRLF:
-                        eol = "\r\n";
-                        break;
-                    case SciMsg.SC_EOL_CR:
-                        eol = "\r";
-                        break;
+                    case EndOfLine.CRLF:
+                        return "\r\n";
+                    case EndOfLine.CR:
+                        return "\r";
                     default:
-                        break;
+                        return "\n";
                 }
-
-                return eol;
             }
         }
 

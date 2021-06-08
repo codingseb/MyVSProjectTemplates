@@ -1,7 +1,9 @@
 ﻿// NPP plugin platform for .Net v0.94.00 by Kasper B. Graversen etc.
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace $safeprojectname$.PluginInfrastructure
 {
@@ -52,16 +54,19 @@ namespace $safeprojectname$.PluginInfrastructure
 
         public void Dispose()
         {
+            try
+            {
                 if (!_disposed)
-                {
-                _disposed = true;
-                try
                 {
                     for (int i = 0; i < _nativeItems.Count; i++)
                         if (_nativeItems[i] != IntPtr.Zero) Marshal.FreeHGlobal(_nativeItems[i]);
                     if (_nativeArray != IntPtr.Zero) Marshal.FreeHGlobal(_nativeArray);
+                    _disposed = true;
                 }
-            catch { }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(MethodBase.GetCurrentMethod().ToString() +": "+ e.Message, this.GetType().Name);
             }
         }
         ~ClikeStringArray()

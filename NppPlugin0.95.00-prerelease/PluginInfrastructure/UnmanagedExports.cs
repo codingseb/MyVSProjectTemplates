@@ -1,8 +1,9 @@
-// NPP plugin platform for .Net v0.94.00 by Kasper B. Graversen etc.
+﻿// NPP plugin platform for .Net v0.94.00 by Kasper B. Graversen etc.
 using $safeprojectname$.PluginInfrastructure;
 using NppPlugin.DllExport;
 using System;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace $safeprojectname$
 {
