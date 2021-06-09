@@ -72,7 +72,7 @@
       <DependentUpon>frmMyDlg.cs</DependentUpon>
     </Compile>
     <Compile Include="PluginInfrastructure\Win32.cs" />
-    <Compile Include="BNpp.cs" />
+    <Compile Include="Npp.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="PluginInfrastructure\GatewayDomain.cs" />
     <Compile Include="PluginInfrastructure\NotepadPPGateway.cs" />

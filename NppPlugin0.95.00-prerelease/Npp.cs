@@ -4,7 +4,7 @@ using System.Text;
 
 namespace $safeprojectname$
 {
-    public static class BNpp
+    public static class Npp
     {
         public static NotepadPPGateway NotepadPP { get; private set; } = new NotepadPPGateway();
 

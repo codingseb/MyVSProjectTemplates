@@ -53,7 +53,7 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="GatewayDomain.cs">GatewayDomain.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="UnmanagedExports.cs">UnmanagedExports.cs</ProjectItem>
       </Folder>
-      <ProjectItem ReplaceParameters="true" TargetFileName="BNpp.cs" OpenInEditor="true">BNpp.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Npp.cs" OpenInEditor="true">Npp.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Main.cs" OpenInEditor="true">Main.cs</ProjectItem>
     </Project>
   </TemplateContent>

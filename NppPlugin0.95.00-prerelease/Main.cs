@@ -47,8 +47,8 @@ namespace $safeprojectname$
 
         internal static void SetToolBarIcon()
         {
-            if (!string.IsNullOrEmpty(BNpp.NotepadPP.NppBinVersion)
-                && int.TryParse(BNpp.NotepadPP.NppBinVersion.Split('.')[0], out int majorVersion)
+            if (!string.IsNullOrEmpty(Npp.NotepadPP.NppBinVersion)
+                && int.TryParse(Npp.NotepadPP.NppBinVersion.Split('.')[0], out int majorVersion)
                 && majorVersion >= 8)
             {
                 toolbarIconsWithDarkMode tbIcons = new toolbarIconsWithDarkMode
