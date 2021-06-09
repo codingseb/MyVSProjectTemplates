@@ -47,12 +47,35 @@ namespace $safeprojectname$
 
         internal static void SetToolBarIcon()
         {
-            toolbarIcons tbIcons = new toolbarIcons();
-            tbIcons.hToolbarBmp = tbBmp.GetHbitmap();
-            IntPtr pTbIcons = Marshal.AllocHGlobal(Marshal.SizeOf(tbIcons));
-            Marshal.StructureToPtr(tbIcons, pTbIcons, false);
-            Win32.SendMessage(PluginBase.nppData._nppHandle, (uint) NppMsg.NPPM_ADDTOOLBARICON, PluginBase._funcItems.Items[idMyDlg]._cmdID, pTbIcons);
-            Marshal.FreeHGlobal(pTbIcons);
+            if (!string.IsNullOrEmpty(BNpp.NotepadPP.NppBinVersion)
+                && int.TryParse(BNpp.NotepadPP.NppBinVersion.Split('.')[0], out int majorVersion)
+                && majorVersion >= 8)
+            {
+                toolbarIconsWithDarkMode tbIcons = new toolbarIconsWithDarkMode
+                {
+                    hToolbarBmp = tbBmp.GetHbitmap(),
+                    hToolbarIcon = tbBmp.GetHicon(),
+                    hToolbarIconDarkMode = tbBmp.GetHicon()
+                };
+
+                IntPtr pTbIcons = Marshal.AllocHGlobal(Marshal.SizeOf(tbIcons));
+                Marshal.StructureToPtr(tbIcons, pTbIcons, false);
+                Win32.SendMessage(PluginBase.nppData._nppHandle, (uint)NppMsg.NPPM_ADDTOOLBARICON_FORDARKMODE, PluginBase._funcItems.Items[idMyDlg]._cmdID, pTbIcons);
+                Marshal.FreeHGlobal(pTbIcons);
+            }
+            else
+            {
+                toolbarIcons tbIcons = new toolbarIcons
+                {
+                    hToolbarBmp = tbBmp.GetHbitmap(),
+                    hToolbarIcon = tbBmp.GetHicon(),
+                };
+
+                IntPtr pTbIcons = Marshal.AllocHGlobal(Marshal.SizeOf(tbIcons));
+                Marshal.StructureToPtr(tbIcons, pTbIcons, false);
+                Win32.SendMessage(PluginBase.nppData._nppHandle, (uint)NppMsg.NPPM_ADDTOOLBARICON, PluginBase._funcItems.Items[idMyDlg]._cmdID, pTbIcons);
+                Marshal.FreeHGlobal(pTbIcons);
+            }
         }
 
         internal static void PluginCleanUp()

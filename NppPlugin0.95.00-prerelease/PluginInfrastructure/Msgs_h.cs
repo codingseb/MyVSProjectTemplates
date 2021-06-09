@@ -27,7 +27,11 @@ namespace $safeprojectname$.PluginInfrastructure
         L_COFFEESCRIPT, L_JSON, L_JAVASCRIPT, L_FORTRAN_77,
         // Don't use L_JS, use L_JAVASCRIPT instead
         // The end of enumated language type, so it should be always at the end
-        L_EXTERNAL
+        L_EXTERNAL,
+        L_SRECORD, L_INTELHEX, L_TEKTRONIXEXTENDEDHEX, L_SWIFT, L_ASN1, L_AVISYNTH,
+        L_BLITZBASIC, L_PUREBASIC, L_FREEBASIC, L_CSOUND, L_ERLANG, L_ESCRIPT,
+        L_FORTH, L_LATEX, L_MMIXAL, L_NIMROD, L_NNCRONTAB, L_OSCRIPT, L_REBOL,
+        L_REGISTRY, L_RUST, L_SPICE, L_TXT2TAGS, L_VPROLOG,
     }
 
     [Flags]
@@ -167,6 +171,13 @@ namespace $safeprojectname$.PluginInfrastructure
         ///void WM_ADDTOOLBARICON(UINT funcItem[X]._cmdID, toolbarIcons icon)
         /// </summary>
         NPPM_ADDTOOLBARICON = Constants.NPPMSG + 41,
+
+        /// <summary>
+        /// void NPPM_ADDTOOLBARICON_FORDARKMODE(UINT funcItem[X]._cmdID, toolbarIconsWithDarkMode iconHandles)
+        /// Use NPPM_ADDTOOLBARICON_FORDARKMODE instead obsolete NPPM_ADDTOOLBARICON which doesn't support the dark mode
+        /// 2 formats / 3 icons are needed:  1 * BMP + 2 * ICO 
+        /// </summary>
+        NPPM_ADDTOOLBARICON_FORDARKMODE = Constants.NPPMSG + 101,
 
         /// <summary>
         ///winVer NPPM_GETWINDOWSVERSION(0, 0)
